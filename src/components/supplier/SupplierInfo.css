@@ -1,0 +1,45 @@
+.supplier-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.supplier-info {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.supplier-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.back-btn {
+  background-color: #6c757d;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}

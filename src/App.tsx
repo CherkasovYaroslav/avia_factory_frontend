@@ -1,7 +1,8 @@
 import { Route, Router, Routes } from 'react-router-dom'
 import './App.css'
-import { SuppliersList } from './components/SuppliersList'
+import { SuppliersList } from './components/supplier/SuppliersList'
 import { Menu } from './components/Menu'
+import { SupplierInfo } from './components/supplier/SupplierInfo'
 
 export const App = () => {
   
@@ -15,6 +16,7 @@ export const App = () => {
         <main className="main">
             <Routes> 
                 <Route path="/suppliers" element={<SuppliersList />} />
+                <Route path="/suppliers/:id" element={<SupplierInfo />} />
                 {/*<Route path="/clients" element={<ClientsList />} /> */} 
             </Routes>
             <section className="content">
