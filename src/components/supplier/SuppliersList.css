@@ -1,0 +1,67 @@
+/* ================= PAGE ================= */
+
+.suppliers-page {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* ================= HEADER ================= */
+
+.suppliers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suppliers-header h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #e2e8f0;
+}
+
+/* ================= BUTTON ================= */
+
+.suppliers-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #22c55e55;
+    background: linear-gradient(180deg,#193b2b,#10231b);
+    color: #adffcf;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suppliers-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+/* ================= TABLE WRAPPER ================= */
+
+.suppliers-table-wrapper {
+    background: linear-gradient(180deg,#0b1229,#0e162f);
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+.suppliers-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.suppliers-table th {
+    text-align: left;
+    padding: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+    border-bottom: 1px solid #1f2937;
+}
+
+.suppliers-table td {
+    padding: 12px;
+    border-bottom: 1px solid #1f2937;
+}

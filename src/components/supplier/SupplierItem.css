@@ -1,0 +1,12 @@
+.supplier-row {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.supplier-row:hover {
+    background: #1e293b;
+}
+
+.supplier-row td {
+    color: #e5e7eb;
+}
