@@ -1,43 +1,71 @@
-
+import { useEffect, useState } from "react";
+import { ClientItem } from "./ClientItem";
+import { ClientForm } from "./ClientForm";
+import axios from "axios";
+import "./ClientsList.css";
+import type { Client } from "../../types/Client";
 
 export const ClientsList = () => {
-    return (
-        <main className="main">
-        <header className="header">
-            <div className="search">
-                <input type="text" id="searchInput"  className="input" placeholder="Пошук користувача..."/>
-                <button className="btn">Пошук</button>
-            </div>
-            <span className="badge">UA</span>
-        </header>
+  const [clients, setClients] = useState<Client[]>([]);
+  const [showForm, setShowForm] = useState(false);
 
-        <section className="content">
-            <div style= {{display:"flex",justifyContent: "space-between", alignItems:"center"}} >
-                <h2>Список клієнтів</h2>
-                <a className="btn" href="@{/users/create}"
-                   style= {{padding:"8px 16px", background:"#4CAF50", color:"white", textDecoration: "none", borderRadius:"5px"}} >
-                    ➕ Додати клієнта
-                </a>
-            </div>
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/clients");
+        setClients(response.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
-            <table id="usersTable" className="table">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Ім’я </th>
-                    <th>Номер телефону</th>
-                    <th>Email</th>
-                    <th>Адреса</th>
-                </tr>
-                </thead>
-                <tbody>
-                
-                <Client/>
+    fetchClients();
+  }, []);
 
+  const handleAddClient = async (newClient: Client) => {
+    try {
+      const response = await axios.post("http://localhost:3001/clients", newClient);
+      setClients((prev) => [...prev, response.data]);
+      setShowForm(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-                </tbody>
-            </table>
-        </section>
-    </main>
-    )
-}; 
+  return (
+    <section className="clients-page">
+      <div className="clients-header">
+        <h2>Клієнти</h2>
+        <button className="clients-btn" onClick={() => setShowForm(true)}>
+          ➕ Додати клієнта
+        </button>
+      </div>
+
+      {showForm ? (
+        <ClientForm
+          onSave={handleAddClient}
+          onCancel={() => setShowForm(false)}
+        />
+      ) : (
+        <div className="clients-table-wrapper">
+          <table className="clients-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Ім’я</th>
+                <th>Телефон</th>
+                <th>Email</th>
+                <th>Адреса</th>
+              </tr>
+            </thead>
+            <tbody>
+              {clients.map((client) => (
+                <ClientItem key={client.id} client={client} />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
+};
