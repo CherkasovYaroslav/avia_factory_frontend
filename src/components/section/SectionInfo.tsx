@@ -41,7 +41,7 @@ export const SectionInfo: React.FC = () => {
   }, [sectionId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Вы уверены, что хотите удалить раздел?")) return;
+    if (!window.confirm("Are you sure you want to delete the section?")) return;
 
     try {
       await fetch(`http://localhost:3001/sections/${sectionId}`, {
@@ -49,7 +49,7 @@ export const SectionInfo: React.FC = () => {
       });
       navigate("/sections");
     } catch (error) {
-      console.error("Ошибка удаления:", error);
+      console.error("Deletion Error!:", error);
     }
   };
 
@@ -67,15 +67,15 @@ export const SectionInfo: React.FC = () => {
       setIsEdit(false);
 
     } catch (error) {
-      console.error("Ошибка обновления:", error);
+      console.error("Update Error!:", error);
     }
   };
 
   const handleBack = () => navigate("/sections");
   const handleEdit = () => setIsEdit(true);
 
-  if (loading) return <p>Загрузка...</p>;
-  if (!section) return <p>Раздел не найден</p>;
+  if (loading) return <p>Loading...</p>;
+  if (!section) return <p>Section not found</p>;
 
   if (isEdit) {
     return (
@@ -90,17 +90,17 @@ export const SectionInfo: React.FC = () => {
   return (
     <div className="section-container">
       <div className="section-card">
-        <h2>Информация о разделе</h2>
+        <h2>Section information</h2>
 
         <div className="section-info">
           <p><strong>ID:</strong> {section.id}</p>
-          <p><strong>Название:</strong> {section.name}</p>
+          <p><strong>Name:</strong> {section.name}</p>
         </div>
 
         <div className="section-buttons">
-          <button className="btn back-btn" onClick={handleBack}>Вернуться к списку</button>
-          <button className="btn edit-btn" onClick={handleEdit}>Редактировать</button>
-          <button className="btn delete-btn" onClick={handleDelete}>Удалить</button>
+          <button className="btn back-btn" onClick={handleBack}>Back to the list</button>
+          <button className="btn edit-btn" onClick={handleEdit}>Edit</button>
+          <button className="btn delete-btn" onClick={handleDelete}>Delete</button>
         </div>
       </div>
     </div>

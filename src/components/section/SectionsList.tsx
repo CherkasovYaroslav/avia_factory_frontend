@@ -39,13 +39,13 @@ export const SectionsList = () => {
   return (
     <section className="sections-page">
       <div className="sections-header">
-        <h2>Цехи</h2>
+        <h2>Sections</h2>
 
         <button
           className="sections-btn"
           onClick={() => setShowForm(true)}
         >
-          ➕ Додати цех
+          ➕ Add section
         </button>
       </div>
 
@@ -60,7 +60,7 @@ export const SectionsList = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Назва</th>
+                <th>Name</th>
               </tr>
             </thead>
 

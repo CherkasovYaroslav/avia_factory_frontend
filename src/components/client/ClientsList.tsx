@@ -35,9 +35,9 @@ export const ClientsList = () => {
   return (
     <section className="clients-page">
       <div className="clients-header">
-        <h2>Клієнти</h2>
+        <h2>Clients</h2>
         <button className="clients-btn" onClick={() => setShowForm(true)}>
-          ➕ Додати клієнта
+          ➕ Add client
         </button>
       </div>
 
@@ -52,10 +52,10 @@ export const ClientsList = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Ім’я</th>
-                <th>Телефон</th>
+                <th>Name</th>
+                <th>Phone</th>
                 <th>Email</th>
-                <th>Адреса</th>
+                <th>Address</th>
               </tr>
             </thead>
             <tbody>

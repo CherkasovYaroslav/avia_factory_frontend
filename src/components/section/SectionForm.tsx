@@ -35,12 +35,12 @@ export const SectionForm: React.FC<SectionFormProps> = ({
     <div className="section-form-overlay">
       <form className="section-form" onSubmit={handleSubmit}>
         <h3>
-          {initialData ? "Редактировать цех" : "Добавить цех"}
+          {initialData ? "Edit workshop" : "Add workshop"}
         </h3>
 
         <input
           name="name"
-          placeholder="Название цеха"
+          placeholder="The name of workshop"
           value={section.name}
           onChange={handleChange}
           required
@@ -48,7 +48,7 @@ export const SectionForm: React.FC<SectionFormProps> = ({
 
         <div className="form-buttons">
           <button type="submit" className="submit-btn">
-            Сохранить
+            Save
           </button>
 
           <button
@@ -56,7 +56,7 @@ export const SectionForm: React.FC<SectionFormProps> = ({
             className="cancel-btn"
             onClick={onCancel}
           >
-            Отмена
+            Cancel
           </button>
         </div>
       </form>

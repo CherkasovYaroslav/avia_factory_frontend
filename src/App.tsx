@@ -8,6 +8,8 @@ import { ClientsList } from './components/client/ClientsList'
 import { ClientInfo } from './components/client/ClientInfo'
 import { SectionsList } from './components/section/SectionsList'
 import { SectionInfo } from './components/section/SectionInfo'
+import { EmployeesList } from './components/employee/EmployeesList'
+import { EmployeeInfo } from './components/employee/EmployeeInfo'
 
 export const App = () => {
   
@@ -28,6 +30,9 @@ export const App = () => {
                 
             <Route path="/sections" element={<SectionsList />} />
             <Route path="/sections/:id" element={<SectionInfo />} />
+
+            <Route path="/employees" element={<EmployeesList />} />
+            <Route path="/employees/:id" element={<EmployeeInfo />} />
           </Routes>
         </main>
       </div>

@@ -41,7 +41,7 @@ export const ClientInfo: React.FC = () => {
   }, [clientId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Вы уверены, что хотите удалить клиента?")) return;
+    if (!window.confirm("Are you sure you want to delete the client ?")) return;
 
     try {
       await fetch(`http://localhost:3001/clients/${clientId}`, {
@@ -49,7 +49,7 @@ export const ClientInfo: React.FC = () => {
       });
       navigate("/clients");
     } catch (error) {
-      console.error("Ошибка удаления:", error);
+      console.error("Deletion Error!:", error);
     }
   };
 
@@ -67,15 +67,15 @@ export const ClientInfo: React.FC = () => {
       setIsEdit(false);
 
     } catch (error) {
-      console.error("Ошибка обновления:", error);
+      console.error("Update Error!:", error);
     }
   };
 
   const handleBack = () => navigate("/clients");
   const handleEdit = () => setIsEdit(true);
 
-  if (loading) return <p>Загрузка...</p>;
-  if (!client) return <p>Клиент не найден</p>;
+  if (loading) return <p>Loading...</p>;
+  if (!client) return <p>Client not found</p>;
 
   if (isEdit) {
     return (
@@ -90,27 +90,27 @@ export const ClientInfo: React.FC = () => {
   return (
     <div className="client-container">
       <div className="client-card">
-        <h2>Информация о клиенте</h2>
+        <h2>Client`s information</h2>
 
         <div className="client-info">
           <p><strong>ID:</strong> {client.id}</p>
-          <p><strong>Название:</strong> {client.name}</p>
-          <p><strong>Телефон:</strong> {client.phone_number}</p>
+          <p><strong>Name:</strong> {client.name}</p>
+          <p><strong>Phone:</strong> {client.phone_number}</p>
           <p><strong>Email:</strong> {client.email}</p>
-          <p><strong>Адрес:</strong> {client.address}</p>
+          <p><strong>Address:</strong> {client.address}</p>
         </div>
 
         <div className="client-buttons">
           <button className="btn back-btn" onClick={handleBack}>
-            Вернуться к списку
+            Back to the list 
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>
-            Редактировать
+            Edit
           </button>
 
           <button className="btn delete-btn" onClick={handleDelete}>
-            Удалить
+            Delete
           </button>
         </div>
       </div>
