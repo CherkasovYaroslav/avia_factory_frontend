@@ -66,14 +66,14 @@ export const EmployeeForm: React.FC<Props> = ({
   return (
     <div className="employee-form-overlay">
       <form className="employee-form" onSubmit={handleSubmit}>
-        <h3>{initialData ? "Редагувати працівника" : "Новий працівник"}</h3>
+        <h3>{initialData ? "Edit employee" : "New employee"}</h3>
 
         <div className="form-group">
-  <label htmlFor="name">Ім'я</label>
+  <label htmlFor="name">Name</label>
   <input
     id="name"
     name="name"
-    placeholder="Введіть ім'я"
+    placeholder="Enter name"
     value={employee.name}
     onChange={handleChange}
     required
@@ -81,11 +81,11 @@ export const EmployeeForm: React.FC<Props> = ({
 </div>
 
 <div className="form-group">
-  <label htmlFor="surname">Прізвище</label>
+  <label htmlFor="surname">Surname</label>
   <input
     id="surname"
     name="surname"
-    placeholder="Введіть прізвище"
+    placeholder="Enter surname"
     value={employee.surname}
     onChange={handleChange}
     required
@@ -93,11 +93,11 @@ export const EmployeeForm: React.FC<Props> = ({
 </div>
 
 <div className="form-group">
-  <label htmlFor="phone_number">Телефон</label>
+  <label htmlFor="phone_number">Phone number</label>
   <input
     id="phone_number"
     name="phone_number"
-    placeholder="Введіть телефон"
+    placeholder="Enter a phone number"
     value={employee.phone_number}
     onChange={handleChange}
     required
@@ -109,14 +109,14 @@ export const EmployeeForm: React.FC<Props> = ({
   <input
     id="email"
     name="email"
-    placeholder="Введіть email"
+    placeholder="Enter email"
     value={employee.email}
     onChange={handleChange}
   />
 </div>
 
 <div className="form-group">
-  <label htmlFor="birth_date">Дата народження</label>
+  <label htmlFor="birth_date">Birth date</label>
   <input
     id="birth_date"
     type="date"
@@ -127,7 +127,7 @@ export const EmployeeForm: React.FC<Props> = ({
 </div>
 
 <div className="form-group">
-  <label htmlFor="hire_date">Дата найму</label>
+  <label htmlFor="hire_date">Hire date</label>
   <input
     id="hire_date"
     type="date"
@@ -138,26 +138,26 @@ export const EmployeeForm: React.FC<Props> = ({
 </div>
 
 <div className="form-group">
-  <label htmlFor="salary">Зарплата</label>
+  <label htmlFor="salary">Salary</label>
   <input
     id="salary"
     type="number"
     name="salary"
-    placeholder="Введіть зарплату"
+    placeholder="Enter a salary"
     value={employee.salary}
     onChange={handleChange}
   />
 </div>
 
 <div className="form-group">
-  <label htmlFor="role_id">Роль</label>
+  <label htmlFor="role_id">Role</label>
   <select
     id="role_id"
     name="role_id"
     value={employee.role_id ?? ""}
     onChange={handleChange}
   >
-    <option value="">Оберіть роль</option>
+    <option value="">Choose a role</option>
     {roles.map((role) => (
       <option key={role.id} value={role.id}>
         {role.name}
@@ -168,14 +168,14 @@ export const EmployeeForm: React.FC<Props> = ({
 
 
 <div className="form-group">
-  <label htmlFor="section_id">Відділ</label>
+  <label htmlFor="section_id">Department</label>
   <select
     id="section_id"
     name="section_id"
     value={employee.section_id ?? ""}
     onChange={handleChange}
   >
-    <option value="">Оберіть відділ</option>
+    <option value="">Choose a department</option>
     {sections.map((section) => (
       <option key={section.id} value={section.id}>
         {section.name}
@@ -185,13 +185,13 @@ export const EmployeeForm: React.FC<Props> = ({
 </div>
 
         <div className="form-buttons">
-          <button className="submit-btn">Зберегти</button>
+          <button className="submit-btn">Submit</button>
           <button
             type="button"
             className="cancel-btn"
             onClick={onCancel}
           >
-            Скасувати
+            Cancel
           </button>
         </div>
       </form>

@@ -64,13 +64,13 @@ export const EmployeesList = () => {
       {/* HEADER */}
 
       <div className="employees-header">
-        <h2>Працівники</h2>
+        <h2>Employees</h2>
 
         <button
           className="employees-btn"
           onClick={() => setShowForm(true)}
         >
-          ➕ Додати працівника
+          ➕ Add employee
         </button>
       </div>
 
@@ -88,7 +88,7 @@ export const EmployeesList = () => {
 
         <input
           type="text"
-          placeholder="Пошук по імені..."
+          placeholder="Search by name..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -97,7 +97,7 @@ export const EmployeesList = () => {
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
         >
-          <option value="">Усі ролі</option>
+          <option value="">All roles</option>
           {roles.map((role) => (
             <option key={role}>{role}</option>
           ))}
@@ -107,7 +107,7 @@ export const EmployeesList = () => {
           value={sectionFilter}
           onChange={(e) => setSectionFilter(e.target.value)}
         >
-          <option value="">Усі відділи</option>
+          <option value="">All departments</option>
           {sections.map((section) => (
             <option key={section}>{section}</option>
           ))}
@@ -123,7 +123,7 @@ export const EmployeesList = () => {
               <th>ID</th>
               <th>Name</th>
               <th>Surname</th>
-              <th>Phone</th>
+              <th>Phone number</th>
               <th>Email</th>
               <th>Role</th>
               <th>Section</th>

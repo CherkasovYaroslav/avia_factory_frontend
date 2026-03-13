@@ -39,11 +39,11 @@ export const ClientForm: React.FC<ClientFormProps> = ({
   return (
     <div className="client-form-overlay">
       <form className="client-form" onSubmit={handleSubmit}>
-        <h3>{initialData ? "Редактировать клиента" : "Добавить клиента"}</h3>
+        <h3>{initialData ? "Edit a Client" : "Add a Client"}</h3>
 
         <input
           name="name"
-          placeholder="Название"
+          placeholder="Name"
           value={client.name}
           onChange={handleChange}
           required
@@ -51,7 +51,7 @@ export const ClientForm: React.FC<ClientFormProps> = ({
 
         <input
           name="phone_number"
-          placeholder="Телефон"
+          placeholder="Phone number"
           value={client.phone_number}
           onChange={handleChange}
         />
@@ -65,15 +65,15 @@ export const ClientForm: React.FC<ClientFormProps> = ({
 
         <input
           name="address"
-          placeholder="Адрес"
+          placeholder="Address"
           value={client.address}
           onChange={handleChange}
         />
 
         <div className="form-buttons">
-          <button className="submit-btn">Сохранить</button>
+          <button className="submit-btn">Submit</button>
           <button type="button" className="cancel-btn" onClick={onCancel}>
-            Отмена
+            Cancel
           </button>
         </div>
       </form>

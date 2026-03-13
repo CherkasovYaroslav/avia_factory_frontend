@@ -1,0 +1,98 @@
+.order-form-overlay {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: transparent;
+}
+
+.order-form {
+  background-color: #1f2a45;
+  color: #fff;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.order-form h3 {
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #cfd8dc;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 14px;
+  border: 1px solid #3a4b6c;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a3b5c;
+  color: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+  color: #a0aabb;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.submit-btn {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: #357abd;
+}
+
+.cancel-btn {
+  background-color: #6c7a8a;
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background-color: #55606c;
+}

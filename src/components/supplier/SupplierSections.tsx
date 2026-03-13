@@ -1,0 +1,87 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import "./SupplierSections.css";
+
+type SectionItem = {
+  section_id: number;
+  section_name: string;
+  details: string;
+};
+
+export const SupplierSections: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+
+  const [sections, setSections] = useState<SectionItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const supplierId = Number(id);
+
+  useEffect(() => {
+    if (isNaN(supplierId)) return;
+
+    const fetchSections = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:3001/suppliers/${supplierId}/sections`
+        );
+
+        if (!response.ok) {
+          throw new Error("Ошибка загрузки");
+        }
+
+        const data = await response.json();
+        setSections(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSections();
+  }, [supplierId]);
+
+  const handleBack = () => {
+    navigate(`/suppliers/${supplierId}`);
+  };
+
+  if (loading) return <p>Загрузка...</p>;
+
+  return (
+    <div className="sections-container">
+
+  <div className="sections-header">
+    <h2>Цехи поставщика</h2>
+
+    <button className="back-btn" onClick={handleBack}>
+      Назад
+    </button>
+  </div>
+
+  {sections.length === 0 ? (
+    <p>Поставщик не поставляет ни в один цех</p>
+  ) : (
+    <table className="sections-table">
+      <thead>
+        <tr>
+          <th>ID цеха</th>
+          <th>Название цеха</th>
+          <th>Детали</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {sections.map((section) => (
+          <tr key={section.section_id}>
+            <td>{section.section_id}</td>
+            <td>{section.section_name}</td>
+            <td>{section.details}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )}
+</div>
+  );
+};

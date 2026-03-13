@@ -1,0 +1,95 @@
+/* ================= PAGE ================= */
+.planes-page {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: #0b1229;
+}
+
+/* ================= HEADER ================= */
+.planes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planes-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #e2e8f0;
+}
+
+/* ================= BUTTON ================= */
+.planes-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #22c55e55;
+  background: linear-gradient(180deg,#193b2b,#10231b);
+  color: #adffcf;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.planes-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+/* ================= FILTERS ================= */
+.planes-filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.planes-filters input,
+.planes-filters select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background-color: #111827;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.planes-filters input::placeholder {
+  color: #94a3b8;
+}
+
+.planes-filters select {
+  cursor: pointer;
+}
+
+/* ================= TABLE WRAPPER ================= */
+.planes-table-wrapper {
+  background: linear-gradient(180deg,#0b1229,#0e162f);
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.planes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.planes-table th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  color: #94a3b8;
+  border-bottom: 1px solid #1f2937;
+}
+
+.planes-table td {
+  padding: 12px;
+  border-bottom: 1px solid #1f2937;
+  color: #e5e7eb;
+}
+
+.planes-table tr:hover {
+  background-color: #1e293b;
+}

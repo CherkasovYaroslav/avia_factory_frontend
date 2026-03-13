@@ -41,7 +41,7 @@ export const EmployeeInfo: React.FC = () => {
   }, [employeeId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Вы уверены, что хотите удалить сотрудника?")) return;
+    if (!window.confirm("Are you sure you want to delete this employee?")) return;
 
     try {
       await fetch(`http://localhost:3001/employees/${employeeId}`, {
@@ -49,7 +49,7 @@ export const EmployeeInfo: React.FC = () => {
       });
       navigate("/employees");
     } catch (error) {
-      console.error("Ошибка удаления:", error);
+      console.error("Deletion Error!:", error);
     }
   };
 
@@ -67,15 +67,15 @@ export const EmployeeInfo: React.FC = () => {
       setIsEdit(false);
 
     } catch (error) {
-      console.error("Ошибка обновления:", error);
+      console.error("Update Error!:", error);
     }
   };
 
   const handleBack = () => navigate("/employees");
   const handleEdit = () => setIsEdit(true);
 
-  if (loading) return <p>Загрузка...</p>;
-  if (!employee) return <p>Сотрудник не найден</p>;
+  if (loading) return <p>Loading...</p>;
+  if (!employee) return <p>Employee not found</p>;
 
   if (isEdit) {
     return (
@@ -90,32 +90,32 @@ export const EmployeeInfo: React.FC = () => {
   return (
     <div className="employee-container">
       <div className="employee-card">
-        <h2>Информация о сотруднике</h2>
+        <h2>Supplier information</h2>
 
         <div className="employee-info">
-          <p><strong>ID:</strong> {employee.id}</p>
-          <p><strong>Имя:</strong> {employee.name}</p>
-          <p><strong>Фамилия:</strong> {employee.surname}</p>
-          <p><strong>Телефон:</strong> {employee.phone_number}</p>
-          <p><strong>Email:</strong> {employee.email}</p>
-          <p><strong>Дата рождения:</strong> {employee.birth_date}</p>
-          <p><strong>Дата найма:</strong> {employee.hire_date}</p>
-          <p><strong>Зарплата:</strong> {employee.salary}</p>
-          <p><strong>Роль:</strong> {employee.role_name || "-"}</p>
-          <p><strong>Отдел:</strong> {employee.section_name || "-"}</p>
+          <p><strong>ID</strong> {employee.id}</p>
+          <p><strong>Name</strong> {employee.name}</p>
+          <p><strong>Surname</strong> {employee.surname}</p>
+          <p><strong>Phone number</strong> {employee.phone_number}</p>
+          <p><strong>Email</strong> {employee.email}</p>
+          <p><strong>Birth date</strong> {employee.birth_date}</p>
+          <p><strong>Hire date</strong> {employee.hire_date}</p>
+          <p><strong>Salary</strong> {employee.salary}</p>
+          <p><strong>Role</strong> {employee.role_name || "-"}</p>
+          <p><strong>Department</strong> {employee.section_name || "-"}</p>
         </div>
 
         <div className="employee-buttons">
           <button className="btn back-btn" onClick={handleBack}>
-            Вернуться к списку
+            Back to the list
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>
-            Редактировать
+            Edit
           </button>
 
           <button className="btn delete-btn" onClick={handleDelete}>
-            Удалить
+            Delete
           </button>
         </div>
       </div>

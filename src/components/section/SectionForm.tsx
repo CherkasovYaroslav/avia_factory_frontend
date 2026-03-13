@@ -40,7 +40,7 @@ export const SectionForm: React.FC<SectionFormProps> = ({
 
         <input
           name="name"
-          placeholder="The name of workshop"
+          placeholder="Workshop name"
           value={section.name}
           onChange={handleChange}
           required
@@ -48,7 +48,7 @@ export const SectionForm: React.FC<SectionFormProps> = ({
 
         <div className="form-buttons">
           <button type="submit" className="submit-btn">
-            Save
+            Submit
           </button>
 
           <button

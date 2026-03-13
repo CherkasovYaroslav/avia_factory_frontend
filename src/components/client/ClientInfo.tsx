@@ -41,7 +41,7 @@ export const ClientInfo: React.FC = () => {
   }, [clientId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Are you sure you want to delete the client ?")) return;
+    if (!window.confirm("Are you sure you want to delete this client ?")) return;
 
     try {
       await fetch(`http://localhost:3001/clients/${clientId}`, {
@@ -90,12 +90,12 @@ export const ClientInfo: React.FC = () => {
   return (
     <div className="client-container">
       <div className="client-card">
-        <h2>Client`s information</h2>
+        <h2>Client information</h2>
 
         <div className="client-info">
           <p><strong>ID:</strong> {client.id}</p>
           <p><strong>Name:</strong> {client.name}</p>
-          <p><strong>Phone:</strong> {client.phone_number}</p>
+          <p><strong>Phone number:</strong> {client.phone_number}</p>
           <p><strong>Email:</strong> {client.email}</p>
           <p><strong>Address:</strong> {client.address}</p>
         </div>

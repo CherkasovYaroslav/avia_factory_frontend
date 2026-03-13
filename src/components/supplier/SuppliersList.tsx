@@ -35,9 +35,9 @@ export const SuppliersList = () => {
   return (
     <section className="suppliers-page">
       <div className="suppliers-header">
-        <h2>Постачальники</h2>
+        <h2>Suppliers</h2>
         <button className="suppliers-btn" onClick={() => setShowForm(true)}>
-          ➕ Додати постачальника
+          ➕ Add supplier
         </button>
       </div>
 
@@ -52,11 +52,11 @@ export const SuppliersList = () => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Ім’я</th>
-                <th>Телефон</th>
+                <th>Name</th>
+                <th>Phone number</th>
                 <th>Email</th>
-                <th>Адреса</th>
-                <th>Деталі</th>
+                <th>Address</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>

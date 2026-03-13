@@ -53,7 +53,7 @@ export const ClientsList = () => {
               <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Phone</th>
+                <th>Phone number</th>
                 <th>Email</th>
                 <th>Address</th>
               </tr>

@@ -1,4 +1,12 @@
-export const Client = ({id,name,phone_number,email,address}) => {
+interface ClientProps {
+    id: number | string;
+    name: string;
+    phone_number: string;
+    email: string;
+    address: string;
+}
+
+export const Client = ({ id, name, phone_number, email, address }: ClientProps) => {
 
     return (
         <tr>

@@ -41,7 +41,7 @@ export const SectionInfo: React.FC = () => {
   }, [sectionId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Are you sure you want to delete the section?")) return;
+    if (!window.confirm("Are you sure you want to delete this section?")) return;
 
     try {
       await fetch(`http://localhost:3001/sections/${sectionId}`, {
@@ -74,6 +74,10 @@ export const SectionInfo: React.FC = () => {
   const handleBack = () => navigate("/sections");
   const handleEdit = () => setIsEdit(true);
 
+  const handleSuppliers = () => {
+    navigate(`/sections/${sectionId}/suppliers`);
+  };
+
   if (loading) return <p>Loading...</p>;
   if (!section) return <p>Section not found</p>;
 
@@ -93,12 +97,13 @@ export const SectionInfo: React.FC = () => {
         <h2>Section information</h2>
 
         <div className="section-info">
-          <p><strong>ID:</strong> {section.id}</p>
-          <p><strong>Name:</strong> {section.name}</p>
+          <p><strong>ID</strong> {section.id}</p>
+          <p><strong>Name</strong> {section.name}</p>
         </div>
 
         <div className="section-buttons">
           <button className="btn back-btn" onClick={handleBack}>Back to the list</button>
+          <button className="btn suppliers-btn" onClick={handleSuppliers}>Suppliers</button>
           <button className="btn edit-btn" onClick={handleEdit}>Edit</button>
           <button className="btn delete-btn" onClick={handleDelete}>Delete</button>
         </div>
