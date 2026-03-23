@@ -111,7 +111,7 @@ export const PlaneInfo: React.FC = () => {
         <div className="plane-buttons">
 
           <button className="btn back-btn" onClick={handleBack}>
-            Back to the list
+            Back
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>

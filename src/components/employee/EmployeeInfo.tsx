@@ -93,21 +93,21 @@ export const EmployeeInfo: React.FC = () => {
         <h2>Supplier information</h2>
 
         <div className="employee-info">
-          <p><strong>ID</strong> {employee.id}</p>
-          <p><strong>Name</strong> {employee.name}</p>
-          <p><strong>Surname</strong> {employee.surname}</p>
-          <p><strong>Phone number</strong> {employee.phone_number}</p>
-          <p><strong>Email</strong> {employee.email}</p>
-          <p><strong>Birth date</strong> {employee.birth_date}</p>
-          <p><strong>Hire date</strong> {employee.hire_date}</p>
-          <p><strong>Salary</strong> {employee.salary}</p>
-          <p><strong>Role</strong> {employee.role_name || "-"}</p>
-          <p><strong>Department</strong> {employee.section_name || "-"}</p>
+          <p><strong>ID:</strong> {employee.id}</p>
+          <p><strong>Name:</strong> {employee.name}</p>
+          <p><strong>Surname:</strong> {employee.surname}</p>
+          <p><strong>Phone number:</strong> {employee.phone_number}</p>
+          <p><strong>Email:</strong> {employee.email}</p>
+          <p><strong>Birth date:</strong> {employee.birth_date.slice(0, 10)}</p>
+          <p><strong>Hire date:</strong> {employee.hire_date.slice(0, 10)}</p>
+          <p><strong>Salary:</strong> {employee.salary}</p>
+          <p><strong>Role:</strong> {employee.role_name || "-"}</p>
+          <p><strong>Department:</strong> {employee.section_name || "-"}</p>
         </div>
 
         <div className="employee-buttons">
           <button className="btn back-btn" onClick={handleBack}>
-            Back to the list
+            Back
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>

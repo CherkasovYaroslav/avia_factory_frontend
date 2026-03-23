@@ -41,11 +41,11 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({
   return (
     <div className="supplier-form-overlay">
       <form className="supplier-form" onSubmit={handleSubmit}>
-        <h3>{initialData ? "Редактировать поставщика" : "Добавить поставщика"}</h3>
+        <h3>{initialData ? "Edit Supplier" : "Add Supplier"}</h3>
 
         <input
           name="name"
-          placeholder="Название"
+          placeholder="Name"
           value={supplier.name}
           onChange={handleChange}
           required
@@ -53,7 +53,7 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({
 
         <input
           name="phone_number"
-          placeholder="Телефон"
+          placeholder="Phone number"
           value={supplier.phone_number}
           onChange={handleChange}
         />
@@ -67,22 +67,22 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({
 
         <input
           name="address"
-          placeholder="Адрес"
+          placeholder="Address"
           value={supplier.address}
           onChange={handleChange}
         />
 
         <textarea
           name="details"
-          placeholder="Детали"
+          placeholder="Details"
           value={supplier.details}
           onChange={handleChange}
         />
 
         <div className="form-buttons">
-          <button className="submit-btn">Сохранить</button>
+          <button className="submit-btn">Submit</button>
           <button type="button" className="cancel-btn" onClick={onCancel}>
-            Отмена
+            Cancel
           </button>
         </div>
       </form>

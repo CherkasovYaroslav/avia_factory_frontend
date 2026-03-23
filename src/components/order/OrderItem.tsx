@@ -30,7 +30,7 @@ export const OrderItem: React.FC<Props> = ({ order }) => {
         {name || "-"} 
       </td>
 
-      <td>{date}</td>
+      <td>{date.slice(0, 10)}</td>
 
       <td>{status}</td>
 

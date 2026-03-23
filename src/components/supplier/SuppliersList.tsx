@@ -47,25 +47,50 @@ export const SuppliersList = () => {
           onCancel={() => setShowForm(false)}
         />
       ) : (
-        <div className="suppliers-table-wrapper">
-          <table className="suppliers-table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Phone number</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              {suppliers.map((supplier) => (
-                <SupplierItem key={supplier.id} supplier={supplier} />
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div
+  style={{
+    background: "linear-gradient(180deg,#0b1229,#0e162f)",
+    border: "1px solid #1f2937",
+    borderRadius: "12px",
+    padding: "16px",
+    overflowX: "auto",
+  }}
+>
+  <table
+    style={{
+      width: "100%",
+      borderCollapse: "collapse",
+    }}
+  >
+    <thead>
+      <tr>
+        {["ID", "Name", "Phone number", "Email", "Address", "Details"].map(
+          (title) => (
+            <th
+              key={title}
+              style={{
+                textAlign: "left",
+                padding: "12px",
+                fontSize: "13px",
+                color: "#94a3b8",
+                borderBottom: "1px solid #1f2937",
+              }}
+            >
+              {title}
+            </th>
+          )
+        )}
+      </tr>
+    </thead>
+
+    <tbody>
+      {suppliers.map((supplier) => (
+        <SupplierItem key={supplier.id} supplier={supplier} />
+      ))}
+    </tbody>
+  </table>
+</div>
+
       )}
     </section>
   );

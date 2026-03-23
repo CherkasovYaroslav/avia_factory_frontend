@@ -29,7 +29,7 @@ export const SectionSuppliers: React.FC = () => {
         );
 
         if (!response.ok) {
-          throw new Error("Ошибка загрузки поставщиков");
+          throw new Error("Error loading suppliers");
         }
 
         const data: SupplierItem[] = await response.json();
@@ -48,26 +48,28 @@ export const SectionSuppliers: React.FC = () => {
     navigate(`/sections/${sectionId}`);
   };
 
-  if (loading) return <p>Загрузка...</p>;
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="section-suppliers-container">
       <div className="section-suppliers-header">
-        <h2>Поставщики цеха</h2>
-        <button className="back-btn" onClick={handleBack}>Назад к цеху</button>
+        <h2>Suppliers</h2>
+        <button className="back-btn" onClick={handleBack}>
+          Back to Section
+        </button>
       </div>
 
       {suppliers.length === 0 ? (
-        <p>У этого цеха нет поставщиков</p>
+        <p>This section has no suppliers.</p>
       ) : (
         <table className="suppliers-table">
           <thead>
             <tr>
               <th>ID</th>
-              <th>Название</th>
-              <th>Телефон</th>
+              <th>Name</th>
+              <th>Phone number</th>
               <th>Email</th>
-              <th>Детали</th>
+              <th>Details</th>
             </tr>
           </thead>
 

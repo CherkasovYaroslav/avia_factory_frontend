@@ -28,6 +28,7 @@ export const ProductInfo: React.FC = () => {
         }
 
         const data: Product = await response.json();
+        console.log("Fetched product:", data);
         setProduct(data);
       } catch (error) {
         console.error(error);
@@ -93,15 +94,17 @@ export const ProductInfo: React.FC = () => {
 
         <div className="product-info">
           <p><strong>ID</strong> {product.id}</p>
-          <p><strong>Name</strong> {product.name}</p>
-          <p><strong>Category</strong> {product.category_name || "-"}</p>
-          <p><strong>Price</strong> {product.price}</p>
-          <p><strong>Stock quantity</strong> {product.stock_quantity}</p>
+          <p><strong>Model of plane</strong> {product.plane_name}</p>
+          <p><strong>Unique code</strong> {product.unique_code}</p>
+          <p><strong>Category</strong> {product.plane_type || "-"}</p>
+          <p><strong>Price</strong> {product.plane_price}</p>
+          <p><strong>Production date</strong> {product.production_date.slice(0, 10)}</p>
+          <p><strong>Status</strong> {product.status}</p>
         </div>
 
         <div className="product-buttons">
           <button className="btn back-btn" onClick={handleBack}>
-            Back to the list
+            Back
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>

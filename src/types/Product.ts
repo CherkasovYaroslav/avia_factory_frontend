@@ -1,15 +1,16 @@
 export type Product = {
-  name: ReactNode;
-  category_name: string;
-  price: ReactNode;
-  stock_quantity: ReactNode;
+  // name: string;
+  // category_name: string;
+  // price: number;
   id?: number;
   unique_code: string;
-  production_date: string; // формат YYYY-MM-DD
+  production_date: string; 
   status: string;
   plane_id: number | null;
   order_id: number | null;
   plane_name?: string;
-  order_status?: string;
+  plane_type?: string;
+  plane_price?: number;
+  // order_status?: string;
   order_total_price?: number;
 };

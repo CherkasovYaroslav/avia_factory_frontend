@@ -63,14 +63,14 @@
     transition: all 0.2s ease;
 }
 
-/* Hover эффект */
+
 .nav li a:hover {
     background: #0b1229;
     border-color: #334155;
     color: #ffffff;
 }
 
-/* Активный пункт */
+
 .nav li.active a {
     background: linear-gradient(180deg, #193b2b, #10231b);
     border: 1px solid #22c55e55;

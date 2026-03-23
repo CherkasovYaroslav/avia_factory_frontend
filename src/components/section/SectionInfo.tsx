@@ -102,7 +102,7 @@ export const SectionInfo: React.FC = () => {
         </div>
 
         <div className="section-buttons">
-          <button className="btn back-btn" onClick={handleBack}>Back to the list</button>
+          <button className="btn back-btn" onClick={handleBack}>Back</button>
           <button className="btn suppliers-btn" onClick={handleSuppliers}>Suppliers</button>
           <button className="btn edit-btn" onClick={handleEdit}>Edit</button>
           <button className="btn delete-btn" onClick={handleDelete}>Delete</button>

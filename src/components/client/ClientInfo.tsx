@@ -102,7 +102,7 @@ export const ClientInfo: React.FC = () => {
 
         <div className="client-buttons">
           <button className="btn back-btn" onClick={handleBack}>
-            Back to the list 
+            Back 
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>

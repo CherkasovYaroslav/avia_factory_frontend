@@ -18,10 +18,11 @@ export const ProductForm: React.FC<Props> = ({ initialData, onSave, onCancel }) 
     status: initialData?.status || "",
     plane_id: initialData?.plane_id ?? null,
     order_id: initialData?.order_id ?? null,
+    /*
     name: initialData?.name || undefined,
     category_name: initialData?.category_name || "",
     price: initialData?.price || 0,
-    stock_quantity: initialData?.stock_quantity || 0
+    */
   });
 
   const [planes, setPlanes] = useState<Plane[]>([]);

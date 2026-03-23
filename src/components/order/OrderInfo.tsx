@@ -104,7 +104,7 @@ export const OrderInfo: React.FC = () => {
             {order.client_name || "-"} 
           </p>
 
-          <p><strong>Date</strong> {order.date}</p>
+          <p><strong>Date</strong> {order.date.slice(0, 10)}</p>
 
           <p><strong>Status</strong> {order.status}</p>
 
@@ -114,7 +114,7 @@ export const OrderInfo: React.FC = () => {
         <div className="order-buttons">
 
           <button className="btn back-btn" onClick={handleBack}>
-            Back to the list
+            Back
           </button>
 
           <button className="btn edit-btn" onClick={handleEdit}>

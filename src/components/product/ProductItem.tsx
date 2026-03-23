@@ -26,7 +26,7 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
     >
       <td>{id || "-"}</td>
       <td>{unique_code}</td>
-      <td>{production_date}</td>
+      <td>{production_date.slice(0, 10)}</td>
       <td>{status}</td>
       <td>{plane_name || "-"}</td>
       <td>{order_id}</td>

@@ -50,7 +50,7 @@ export const SupplierInfo: React.FC = () => {
   }, [supplierId]);
 
   const handleDelete = async () => {
-    if (!window.confirm("Вы уверены, что хотите удалить поставщика?")) return;
+    if (!window.confirm("Are you sure you want to delete this supplier?")) return;
 
     try {
       await fetch(`http://localhost:3001/suppliers/${supplierId}`, {
@@ -58,7 +58,7 @@ export const SupplierInfo: React.FC = () => {
       });
       navigate("/suppliers");
     } catch (error) {
-      console.error("Ошибка удаления:", error);
+      console.error("Deletion error:", error);
     }
   };
 
@@ -76,7 +76,7 @@ export const SupplierInfo: React.FC = () => {
     setIsEdit(false);
 
   } catch (error) {
-    console.error("Ошибка обновления:", error);
+    console.error("Update error:", error);
   }
 };
 
@@ -87,8 +87,8 @@ export const SupplierInfo: React.FC = () => {
     navigate(`/suppliers/${supplierId}/sections`);
   };
 
-  if (loading) return <p>Загрузка...</p>;
-  if (!supplier) return <p>Поставщик не найден</p>;
+  if (loading) return <p>Loading...</p>;
+  if (!supplier) return <p>Supplier not found</p>;
   console.log(supplier);
   
   if (isEdit) {
@@ -104,23 +104,23 @@ export const SupplierInfo: React.FC = () => {
   return (
     <div className="supplier-container">
     <div className="supplier-card">
-      <h2>Информация о поставщике</h2>
+      <h2>Supplier Information</h2>
 
       <div className="supplier-info">
-        <p><strong>ID:</strong> {supplier.id}</p>
-        <p><strong>Название:</strong> {supplier.name}</p>
-        <p><strong>Телефон:</strong> {supplier.phone_number}</p>
-        <p><strong>Email:</strong> {supplier.email}</p>
-        <p><strong>Детали:</strong> {supplier.details}</p>
-        <p><strong>Адрес:</strong> {supplier.address}</p>
+        <p><strong>ID</strong> {supplier.id}</p>
+        <p><strong>Name</strong> {supplier.name}</p>
+        <p><strong>Phone number</strong> {supplier.phone_number}</p>
+        <p><strong>Email</strong> {supplier.email}</p>
+        <p><strong>Details</strong> {supplier.details}</p>
+        <p><strong>Address</strong> {supplier.address}</p>
       </div>
 
       <div className="supplier-buttons">
-        <button className="btn back-btn" onClick={handleBack}>Вернуться к списку</button>
-        <button className="btn edit-btn" onClick={handleEdit}>Редактировать</button>
-          <button className="btn delete-btn" onClick={handleDelete}>Удалить</button>
+        <button className="btn back-btn" onClick={handleBack}>Back</button>
+        <button className="btn edit-btn" onClick={handleEdit}>Edit</button>
+          <button className="btn delete-btn" onClick={handleDelete}>Delete</button>
           <button className="btn sections-btn" onClick={handleSections}>
-            Цехи
+            Sections
           </button>
       </div>
     </div>
